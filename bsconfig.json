@@ -4,7 +4,9 @@
   "reason": { "react-jsx": 3 },
   "refmt": 3,
   "bs-dependencies": ["@rescript/react"],
-  "ppx-flags": [],
+  "ppx-flags": [
+    ["tailwind-ppx", "-path styles/tailwind.css"]
+  ],
   "sources": [
     { "dir": "src", "subdirs": true }
   ],
@@ -20,5 +22,11 @@
   "gentypeconfig": {
     "language": "untyped",
     "shims": []
-  }
+  },
+  "generators": [
+    {
+      "name": "gen-tailwind",
+      "command": "tailwindcss build $in -o $out"
+    }
+  ]
 }
