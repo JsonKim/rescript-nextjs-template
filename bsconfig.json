@@ -5,10 +5,19 @@
   "refmt": 3,
   "bs-dependencies": ["@rescript/react"],
   "ppx-flags": [
-    ["tailwind-ppx", "-path styles/tailwind.css"]
+    ["tailwind-ppx", "-path styles/.tailwind.dev.css"]
   ],
   "sources": [
-    { "dir": "src", "subdirs": true }
+    {
+      "dir": "src",
+      "subdirs": true,
+      "generators": [
+        {
+          "name": "gen-tailwind",
+          "edge": ["../styles/.tailwind.dev.css", ":", "../styles/main.css"]
+        }
+      ]
+    }
   ],
   "package-specs": {
     "module": "es6",
@@ -26,7 +35,7 @@
   "generators": [
     {
       "name": "gen-tailwind",
-      "command": "tailwindcss build $in -o $out"
+      "command": "postcss $in -o $out"
     }
   ]
 }

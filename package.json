@@ -18,7 +18,10 @@
     "start": "next start -p $PORT",
     "res:build": "rescript",
     "res:clean": "rescript clean",
-    "res:start": "rescript build -w"
+    "res:start": "rescript build -w",
+    "css:build": "postcss styles/main.css -o styles/.tailwind.dev.css",
+    "css:start": "postcss --verbose -w styles/main.css -o styles/.tailwind.dev.css",
+    "dev:watch": "yarn css:build && concurrently yarn:css:start yarn:res:start yarn:dev"
   },
   "devDependencies": {
     "@dylanirlbeck/tailwind-ppx": "^0.8.4",
