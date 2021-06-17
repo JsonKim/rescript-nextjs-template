@@ -38,9 +38,7 @@ const config = {
     }
     return config
   },
-  future: {
-    webpack5: isWebpack5
-  }
+  webpack5: isWebpack5
 };
 
 module.exports = withTM(config);

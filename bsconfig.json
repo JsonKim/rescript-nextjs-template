@@ -10,13 +10,7 @@
   "sources": [
     {
       "dir": "src",
-      "subdirs": true,
-      "generators": [
-        {
-          "name": "gen-tailwind",
-          "edge": ["../styles/.tailwind.dev.css", ":", "../styles/main.css"]
-        }
-      ]
+      "subdirs": true
     }
   ],
   "package-specs": {
@@ -31,11 +25,5 @@
   "gentypeconfig": {
     "language": "untyped",
     "shims": []
-  },
-  "generators": [
-    {
-      "name": "gen-tailwind",
-      "command": "postcss $in -o $out"
-    }
-  ]
+  }
 }
