@@ -11,7 +11,7 @@ let default = (props: props) =>
 
 let getServerSideProps = _ctx => {
   let props = {
-    msg: "This page was rendered with getServerSideProps. You can find the source code here: ",
+    msg: "This page was rendered with getServerSideProps. You can find the source code here1: ",
     href: "https://github.com/ryyppy/nextjs-default/tree/master/src/Examples.res",
   }
   Js.Promise.resolve({"props": props})
